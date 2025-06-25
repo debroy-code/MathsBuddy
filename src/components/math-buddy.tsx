@@ -21,8 +21,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { BrainCircuit, History, Loader2, Send, Trash2, WandSparkles } from 'lucide-react';
-import { useEffect, useRef, useState, useTransition } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useEffect, useRef, useState, useTransition } from 'react';
+import { useFormStatus } from 'react-dom';
 
 const LOCAL_STORAGE_KEY = 'math-buddy-history';
 
@@ -33,7 +33,7 @@ export function MathBuddy() {
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
-  const [state, formAction] = useFormState(explainProblemAction, {});
+  const [state, formAction] = useActionState(explainProblemAction, {});
 
   const activeItem = history.find(item => item.id === activeId);
 
