@@ -99,7 +99,7 @@ export function MathBuddy() {
   };
 
   return (
-    <SidebarProvider>
+    <SidebarProvider className="animate-fade-in">
       <Sidebar side="left" className="transition-all duration-300">
         <SidebarHeader>
           <div className="flex items-center gap-2">
