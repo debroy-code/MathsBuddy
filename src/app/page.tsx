@@ -1,6 +1,6 @@
 'use client';
 
-import { MathBuddy } from '@/components/math-buddy';
+import { HomePage } from '@/components/home-page';
 import { OpeningAnimation } from '@/components/opening-animation';
 import { useState, useEffect } from 'react';
 
@@ -8,7 +8,6 @@ export default function Home() {
   const [isShowingAnimation, setIsShowingAnimation] = useState(true);
 
   useEffect(() => {
-    // This timeout should match the total animation duration in OpeningAnimation
     const timer = setTimeout(() => {
       setIsShowingAnimation(false);
     }, 2500);
@@ -20,5 +19,5 @@ export default function Home() {
     return <OpeningAnimation />;
   }
 
-  return <MathBuddy />;
+  return <HomePage />;
 }
